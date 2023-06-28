@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Vaz 2103</title>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link rel="stylesheet" type="text/css" href="relay.js" />
+	</head>
+	<body>
+		<body>
+			<div class="name"><a href="other.html">Панель Управления</a></div>
+			<div class="function">
+			    <div class="name-function">Сигнализация</div>    
+			    <div class="security_status"></div>
+			    <input type="button" value="ON" id="security_switch_active">
+			    <input type="button" value="OFF" id="security_switch_noactive">
+		    </div>
+			<div class="function">
+			    <div class="name-function">Закрыть/Открыть</div>    
+			    <div class="security_status"></div>
+			    <input type="button" value="ON" id="look_on">
+			    <input type="button" value="OFF" id="look_off">
+		    </div>
+			<div class="function">
+			    <div class="name-function">Блокировка</div>    
+			    <div class="security_status"></div>
+			    <input type="button" value="ON" id="block_on">
+			    <input type="button" value="OFF" id="block_off">
+		    </div>
+			<div class="function">
+			    <div class="name-function">Поиск авто</div>    
+			    <input type="button" value="Поиск" id="search">
+		    </div>
+			<div class="function">
+			    <div class="name-function">Тревога</div>    
+			    <input type="button" value="Тревога" id="anxiety">
+		    </div>
+			     <script>
+				    var relay = document.getElementById("security_switch_active");
+			        function relay_inverse() {
+				    var request = new XMLHttpRequest();
+				    request.open('GET','/security_switch_active',false);
+				    request.send();
+			         }
+			        relay.addEventListener('click', relay_inverse);
+			        </script>
+			        <script>
+				    var relay = document.getElementById("security_switch_noactive");
+			        function relay_inverse() {
+				    var request = new XMLHttpRequest();
+				    request.open('GET','/security_switch_noactive',false);
+				    request.send();
+			         }
+			        relay.addEventListener('click', relay_inverse);
+			        </script>
+					<script>
+						var relay = document.getElementById("look_on");
+						function relay_inverse() {
+						var request = new XMLHttpRequest();
+						request.open('GET','/look_on',false);
+						request.send();
+						 }
+						relay.addEventListener('click', relay_inverse);
+					</script>
+					<script>
+							var relay = document.getElementById("look_off");
+							function relay_inverse() {
+							var request = new XMLHttpRequest();
+							request.open('GET','/look_off',false);
+							request.send();
+							 }
+							relay.addEventListener('click', relay_inverse);
+					</script>
+	    </body>
+</html>
